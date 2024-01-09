@@ -5,9 +5,9 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 import Link from 'next/link'
+import { ToggleTheme } from './ToggleTheme'
 
 const AVATAR_URL = 'https://avatars.githubusercontent.com/u/91371538?v=4'
 
@@ -25,7 +25,7 @@ const MENU_ITEMS: NavLink[] = [
 export default function NavbarPop() {
   return (
     <div>
-      <div className='container max-w-screen-xl py-4'>
+      <div className='container max-w-screen-xl py-4 flex justify-between'>
         <NavigationMenu>
           <NavigationMenuList>
             {MENU_ITEMS.map(({ label, href }) => (
@@ -46,6 +46,9 @@ export default function NavbarPop() {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
+        <div>
+          <ToggleTheme />
+        </div>
       </div>
     </div>
   )

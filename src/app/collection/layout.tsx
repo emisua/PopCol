@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/components/theme-provider'
 import NavbarPop from '@/components/NavbarPop'
 
 export const metadata = {
@@ -12,13 +13,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang='es'>
-      <body className='bg-neutral-900 flex flex-col'>
-        <NavbarPop />
+      <ThemeProvider
+        attribute='class'
+        defaultTheme='system'
+        enableSystem
+        disableTransitionOnChange
+      >
+        <body className='dark:bg-neutral-900 flex flex-col'>
+          <NavbarPop />
 
-        <main className='container max-w-screen-xl mx-auto dark'>
-          {children}
-        </main>
-      </body>
+          <main className='container max-w-screen-xl mx-auto'>{children}</main>
+        </body>
+      </ThemeProvider>
     </html>
   )
 }

@@ -1,11 +1,8 @@
 'use client'
-
-import { useRouter } from 'next/navigation'
 import { addFunkoToCollection } from '../../lib/actions'
+import { AddForm } from '@/components/AddForm'
 
 export default function AddPage() {
-  const router = useRouter()
-
   return (
     <div className='w-96 mx-auto py-8'>
       <h1 className='font-bold text-xl mb-4 text-neutral-300'>
@@ -64,6 +61,7 @@ export default function AddPage() {
           </Button>
         </div>
       </form> */}
+      <AddForm />
     </div>
   )
 }
